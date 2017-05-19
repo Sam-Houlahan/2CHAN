@@ -1,10 +1,11 @@
 import React from 'react'
+import
 
+dataPost
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+     <AddPost addPost={this.myCallback}/>
   )
 }
 
 export default App
-
