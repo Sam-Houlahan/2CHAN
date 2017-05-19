@@ -18,12 +18,12 @@ class AddPost extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-   
+
       const post = { title:this.state.title, message:this.state.message}
 
 
          this.props.addPost(post);
-       
+
     }
 
   render() {
@@ -31,12 +31,12 @@ class AddPost extends React.Component {
       <div className ="addpost">
         <h3> Add a message </h3>
       <form onSubmit={this.handleSubmit} >
-      <label for = "title"> Title: </label><br/>
-     
-      <input type="text" value={this.state.title} placeholder ="Add your message title" name="title" onChange={this.handleChange} />
+      <label for = "title"> Title </label><br/>
+
+      <input type="text" value={this.state.title} className="form-control" placeholder ="Add your message title" name="title" onChange={this.handleChange} />
     <br/>
-     <label for = "message"> Message: </label><br/>
-      <textarea type="text" value={this.state.message} name="message" onChange={this.handleChange} />
+     <label for = "message"> Message </label><br/>
+      <textarea type="text" value={this.state.message} className="form-control" name="message" onChange={this.handleChange} />
      <br/>
       <input type="submit" value="Submit" className="btn btn-primary" />
 

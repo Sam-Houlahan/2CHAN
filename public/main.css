@@ -1,11 +1,38 @@
+#app {
+  width:70%;
+  margin:0 auto;
+}
 h1 {
     font-family: 'Permanent Marker', cursive;
     font-size:50px;
-    text-align: center
+    text-align: center;
 }
+label {
+  font-weight:bold;
+  font-size:20px;
+}
+.list-item{
+    width: 80%;
+    display:block;
+    float:left;
+    border:1px solid #990000;
+}
+.list-item .item {
+  border:1px solid #333333;
+  margin:10px;
+  padding-right:15px;
+  padding-left:15px;
+  padding-bottom:15px;
 
-.list{
-    text-align: center
+}
+.list-item .item p {
+  margin:10px;
+}
+.list-item .item .message {
+  margin-bottom:15px;
+}
+.list-item .item h2 {
+  text-transform: capitalize;
 }
 
 ul{
@@ -13,5 +40,7 @@ ul{
 }
 
 .addpost {
-    text-align: center
+    text-align: center;
+    width:20%;
+    margin-left:85%;
 }

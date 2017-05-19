@@ -8,8 +8,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       posts:[
-        {title: 'hello',
-        message: 'testing',
+        {title: 'This is an amazing website!',
+        message: 'I wish this site worked.',
         comments:[ ]
         }
       ],
@@ -18,8 +18,8 @@ class App extends React.Component {
     this.addComment = this.addComment.bind(this)
   }
 
-  
-  
+
+
 addPost(post) {
 
   const newPosts = [].concat(this.state.posts)
@@ -33,8 +33,8 @@ addPost(post) {
   addComment (title, comment) {
     let position
 
-  
-   
+
+
     for (let i = 0; i <this.state.posts.length; i++){
       if (this.state.posts[i].title === title){
         position = i
@@ -48,14 +48,15 @@ addPost(post) {
       })
   }
 
- 
+
 
 render() {
   return (
 <Router>
   <div>
-    <AddPost addPost = {this.addPost} />
     <List list = {this.state.posts} addComment={this.addComment} />
+    <AddPost addPost = {this.addPost} />
+
   </div>
    </Router>
 
