@@ -28,18 +28,20 @@ class AddPost extends React.Component {
 
   render() {
     return (
+      <div className ="addpost">
+        <h3> Add a message </h3>
       <form onSubmit={this.handleSubmit} >
-      <label>
-      Title:
-      <input type="text" value={this.state.title} name="title" onChange={this.handleChange} />
-      </label>
-      <label>
-      Message:
-      <input type="text" value={this.state.message} name="message" onChange={this.handleChange} />
-      </label>
-      <input type="submit" value="Submit" />
+      <label for = "title"> Title: </label><br/>
+     
+      <input type="text" value={this.state.title} placeholder ="Add your message title" name="title" onChange={this.handleChange} />
+    <br/>
+     <label for = "message"> Message: </label><br/>
+      <textarea type="text" value={this.state.message} name="message" onChange={this.handleChange} />
+     <br/>
+      <input type="submit" value="Submit" className="btn btn-primary" />
 
       </form>
+      </div>
     )
   }
 }
