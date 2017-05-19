@@ -1,10 +1,10 @@
 import React from 'react'
-import {HashRouter as Router,Route,Link} from 'react-router-dom'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import List from './List'
 import AddPost from './AddPost'
 
 class App extends React.Component {
-  constructor(props){
+  constructor (props) {
     super(props)
     this.state = {
       posts:[
@@ -52,6 +52,7 @@ render() {
     <List list = {this.state.posts} />
   </div>
    </Router>
+
     )
   }
 }
