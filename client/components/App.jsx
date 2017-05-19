@@ -6,13 +6,11 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      
       posts:[
         {title: ''},
         {message: ''},
         {comments:['']}
       ],
-
     }
   }
 
@@ -20,7 +18,7 @@ addPost(post) {
   const newPosts = [].concat(this.state.posts)
   newPosts.push(post)
   this.setState({
-    posts:newPosts
+    posts: newPosts
     })
   }
 
