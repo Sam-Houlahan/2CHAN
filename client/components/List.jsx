@@ -5,7 +5,8 @@ import Comments from './Comments'
 const List = (props) =>{
 return (
     <Router>
-    <div>
+    <div className = "list">
+       
         {props.list.map((item) => {
         
             return (
