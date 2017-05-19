@@ -7,34 +7,58 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      posts: [
-        {title: '',
-          message: '',
-          comments: ['']}
-      ]
-
+      posts:[
+        {title: 'hello',
+        message: 'testing',
+        comments:[ ]
+        }
+      ],
     }
     this.addPost = this.addPost.bind(this)
+    this.addComment = this.addComment.bind(this)
   }
 
-  addPost (post) {
-    console.log(post)
-    const newPosts = [].concat(this.state.posts)
-    newPosts.push(post)
-    this.setState({
-      posts: newPosts
+  
+  
+addPost(post) {
+
+  const newPosts = [].concat(this.state.posts)
+  newPosts.push(post)
+  this.setState({
+    posts: newPosts
     })
-    console.log(newPosts)
+
   }
 
-  render () {
-    return (
-      <Router>
-        <div>
-          <AddPost addPost={this.addPost} />
-          <List />
-        </div>
-      </Router>
+  addComment (title, comment) {
+    let position
+
+  
+   
+    for (let i = 0; i <this.state.posts.length; i++){
+      if (this.state.posts[i].title === title){
+        position = i
+      }
+    }
+      const newPosts = [].concat(this.state.posts)
+      newPosts[position].comments.push(comment)
+      console.log(newPosts )
+      this.setState({
+        posts: newPosts
+      })
+  }
+
+ 
+
+render() {
+  return (
+<Router>
+  <div>
+    <AddPost addPost = {this.addPost} />
+    <List list = {this.state.posts} addComment={this.addComment} />
+  </div>
+   </Router>
+
     )
   }
 }
