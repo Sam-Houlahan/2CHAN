@@ -17,6 +17,8 @@ class App extends React.Component {
     this.addPost = this.addPost.bind(this)
     this.addComment = this.addComment.bind(this)
   }
+
+  
   
 addPost(post) {
 
@@ -30,15 +32,19 @@ addPost(post) {
 
   addComment (title, comment) {
     let position
-    for (i = 0; i <this.state.posts; i++){
-      if (this.state.posts[i] === title){
+
+  
+   
+    for (let i = 0; i <this.state.posts.length; i++){
+      if (this.state.posts[i].title === title){
         position = i
       }
     }
-
-      let x =  this.state.posts[position].comments.push(comment)
+      const newPosts = [].concat(this.state.posts)
+      newPosts[position].comments.push(comment)
+      console.log(newPosts )
       this.setState({
-        posts: x
+        posts: newPosts
       })
   }
 
