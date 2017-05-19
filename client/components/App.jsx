@@ -49,7 +49,7 @@ render() {
 <Router>
   <div>
     <AddPost addPost = {this.addPost} />
-    <List list = {this.state.posts} />
+    <List list = {this.state.posts} addComment={this.addComment} />
   </div>
    </Router>
 

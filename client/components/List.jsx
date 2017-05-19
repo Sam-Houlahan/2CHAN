@@ -1,6 +1,6 @@
 import React from 'react'
 import {HashRouter as Router,Route,Link} from 'react-router-dom'
-import addComment from './addComment'
+import AddComment from './AddComment'
 const List = (props) =>{
 console.log('props.list:', props)
 return (
@@ -11,7 +11,7 @@ return (
                 <ul>
                 <li>Title: {item.title}</li>
                 <li>Message: {item.message} </li>
-                <Route path = {`/comment/:title`} component ={addComment} />
+                <Route path = {`/comment/:title`} component ={AddComment} />
                 <Link to = {`/comment/${item.title}`}><li>Reply</li></Link>
                 </ul>
         )
