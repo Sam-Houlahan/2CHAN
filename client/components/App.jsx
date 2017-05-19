@@ -6,6 +6,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+
       posts:[
         {title: ''},
         {message: ''},
@@ -34,4 +35,3 @@ render() {
   }
 }
 export default App
-
