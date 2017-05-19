@@ -1,50 +1,41 @@
 import React from 'react'
 
 class AddPost extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    this.state = {title: '',
-                messsage: ''}
-
+    this.state = {
+      title: '',
+      message: ''
+    }
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleChange(event) {
-     this.setState({[event.target.name]: event.target.value});
-   }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    alert('A Post was submitted: ' + this.state.value)
-    const target = event.target;
-   const title = target.title;
-   const message = target.message;
-
-      const post = [title, message]
-
-     function sendPost(post) {
-         this.props.addPost(post);
-     }
-
-
-
+  handleChange (event) {
+    this.setState({[event.target.name]: event.target.value})
   }
-
-  render() {
+  handleSubmit (event) {
+    event.preventDefault()
+    // alert('A Post was submitted: ' + this.state.value)
+    const post = {
+      title: this.state.title,
+      message: this.state.message
+    }
+    this.props.addPost(post)
+  }
+  render () {
     return (
       <form onSubmit={this.handleSubmit}>
-      <label>
-      Title:
-      <input type="text" value={this.state.title} name="title" onChange={this.handleChange} />
-      </label>
-      <label>
-      Message:
-      <input type="text" value={this.state.message} name="message" onChange={this.handleChange} />
-      </label>
-      <input type="submit" value="Submit" />
+        <label>
+      Title:<br />
+          <input type='text' value={this.state.title} name='title' onChange={this.handleChange} />
+        </label><br />
+        <label>
+      Message:<br />
+          <textarea type='text' value={this.state.message} name='message' onChange={this.handleChange} />
+        </label><br />
+        <input type='submit' value='Submit' />
       </form>
-    );
+    )
   }
 }
 
