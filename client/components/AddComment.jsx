@@ -7,8 +7,13 @@ class AddComment extends React.Component {
       title: props.match.params.title,
       comment: ''
     }
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+  handleChange (event) {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
   handleSubmit (event) {
     event.preventDefault()
     const comment = {
@@ -22,7 +27,7 @@ class AddComment extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
       Comment:<br />
-          <textarea type='text' value={this.state.comment} name='comment' />
+          <textarea type='text' value={this.state.comment} name='comment' onChange={this.handleChange} />
         </label><br />
         <input type='submit' value='Submit' />
       </form>
